@@ -1,16 +1,6 @@
 server:
   port: 8083
 
-
-spring:
-  boot:
-    admin:
-      client:
-        url: http://localhost:8080/admin
-        instance:
-          name: test
-          prefer-ip: true
-
 workflow:
   sender:
     http:
