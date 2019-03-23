@@ -8,4 +8,4 @@ workflow:
 
 logging:
   level:
-    root: debug
+    com.ladtor: debug

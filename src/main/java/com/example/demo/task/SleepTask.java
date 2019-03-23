@@ -10,7 +10,10 @@ public class SleepTask extends AbstractTask {
     public void execute(Key key, JSONObject params) {
         params.put("start", System.currentTimeMillis());
         try {
-            Thread.sleep(10000);
+            Integer val = params.getInteger("val");
+            if (val != null) {
+                Thread.sleep(val * 1000);
+            }
         } catch (InterruptedException e) {
             params.put("end", System.currentTimeMillis());
             fail(key, params);
