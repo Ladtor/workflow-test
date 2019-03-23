@@ -23,4 +23,4 @@ workflow:
 ```
 
 ### 使用
-实现`com.ladtor.workflow.task.task.AbstractTask`接口，然后到管理系统任务应用配置即可
+继承`com.ladtor.workflow.task.task.AbstractTask`抽象类实现相关接口，然后到管理系统任务应用配置即可
