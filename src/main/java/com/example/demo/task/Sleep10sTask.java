@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Sleep10sTask extends AbstractTask {
+    public Sleep10sTask() {
+        super("sleep10s");
+    }
+
     public void execute(Key key, JSONObject params) {
         try {
             Thread.sleep(10000);
@@ -14,9 +18,5 @@ public class Sleep10sTask extends AbstractTask {
 
         }
         this.success(key, new JSONObject());
-    }
-
-    public String getKey() {
-        return "sleep10s";
     }
 }
