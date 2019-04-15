@@ -1,7 +1,7 @@
 package com.example.demo.task;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ladtor.workflow.task.bo.Key;
+import com.ladtor.workflow.task.exception.TaskFailException;
 import com.ladtor.workflow.task.task.AbstractTask;
 import org.springframework.stereotype.Component;
 
@@ -12,12 +12,13 @@ public class Sleep5sTask extends AbstractTask {
         super("sleep5s");
     }
 
-    public void execute(Key key, JSONObject params) {
+    @Override
+    protected JSONObject doExecute(JSONObject params) throws TaskFailException {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException ignored) {
 
         }
-        this.success(key, params);
+        return params;
     }
 }
